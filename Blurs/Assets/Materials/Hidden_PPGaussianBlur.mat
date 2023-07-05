@@ -29,7 +29,7 @@ Material:
     - _DiffStrength: 6000
     - _DifferenceGaussians: -0.86
     - _NumSamples: 10
-    - _StandartDev: 0.0064
-    - _Strength: 600
+    - _StandartDev: 0.0075
+    - _Strength: 500
     m_Colors: []
   m_BuildTextureStacks: []

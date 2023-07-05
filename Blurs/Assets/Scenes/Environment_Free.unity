@@ -1229,7 +1229,7 @@ MonoBehaviour:
   PPGaussianBlur: {fileID: 2100000, guid: 219e77a455b8ca946949a5b898bc53aa, type: 2}
   PPDirectionalBlur: {fileID: 2100000, guid: a633c9d77c7f03b4cbaa08397a138d6b, type: 2}
   PPBokehBlur: {fileID: 2100000, guid: f95186572f4b69543a5cc834bda093b7, type: 2}
-  blurType: 6
+  blurType: 2
   bokehType: 0
 --- !u!114 &1441948887
 MonoBehaviour:

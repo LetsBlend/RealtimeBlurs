@@ -150,7 +150,6 @@ Shader "Hidden/PPBokehBlur"
             {
                 float4 color = tex2D(_MainTex, i.uv);
                 int size = _BokehType == 1 ? 39 : 40;
-                [unroll]
                 for(int j = 0; j < size; j++)
                 {
                     float2 offset = (_BokehType == 1 ? triangleOffsets[j] : roundOffsets[j]) * _ScreenParams.yx / _ScreenParams.x;

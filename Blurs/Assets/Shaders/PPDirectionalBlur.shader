@@ -54,7 +54,6 @@ Shader "Hidden/PPDirectionalBlur"
                 vel = vel * _ScreenParams.yx / _ScreenParams.x;
                 float2 uv = i.uv + vel;
 
-                [unroll(_NumSamples)]
                 for(int i = 0; i < _NumSamples; i++, uv += vel){
                     color += tex2D(_MainTex, uv);
                 }

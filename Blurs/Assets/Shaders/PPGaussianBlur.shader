@@ -59,10 +59,8 @@ Shader "Hidden/PPGaussianBlur"
                 float4 color = tex2D(_MainTex, i.uv);
                 float sum = 0;
 
-                [unroll(_NumSamples)]
                 for(int s = -_NumSamples; s <= _NumSamples; s++)
                 {
-                    [unroll(_NumSamples)]
                     for(int j = -_NumSamples; j <= _NumSamples; j++)
                     {
                         float2 offset = float2(s, j) / strength;
@@ -81,10 +79,8 @@ Shader "Hidden/PPGaussianBlur"
                 color = tex2D(_MainTex, i.uv);
                 sum = 0;
 
-                [unroll(_NumSamples)]
                 for(int s = -_NumSamples; s <= _NumSamples; s++)
                 {
-                    [unroll(_NumSamples)]
                     for(int j = -_NumSamples; j <= _NumSamples; j++)
                     {
                         float2 offset = float2(s, j) / (strength * 1.01f);

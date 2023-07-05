@@ -47,10 +47,8 @@ Shader "Hidden/PPBoxBlur"
             {
                 float4 color = tex2D(_MainTex, i.uv);
 
-                [unroll(_NumSamples)]
                 for(int s = -_NumSamples; s <= _NumSamples; s++)
                 {
-                    [unroll(_NumSamples)]
                     for(int j = -_NumSamples; j <= _NumSamples; j++)
                     {
                         color += tex2D(_MainTex, i.uv + float2(s, j) / _Strength);

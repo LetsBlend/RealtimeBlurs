@@ -65,10 +65,10 @@ Shader "Hidden/PPMotionBlur"
 
                 viewVector /= dot(viewVector, -UNITY_MATRIX_V[2].xyz);
 
-                // Current viewport position    
                 float3 pos = _WorldSpaceCameraPos + viewVector * depth;
                 float3 prevPos = _PreviousWorldSpaceCameraPos + prevViewVector * depth;
 
+                // Current viewport position    
                 float3 viewPos = mul(_ViewProjection, float4(pos, 1));
                 float3 prevViewPos =  mul(_PreviousViewProjection, float4(pos, 1));
                 float2 velocity = viewPos - prevViewPos;
@@ -78,7 +78,6 @@ Shader "Hidden/PPMotionBlur"
                 float2 uv = i.uv;   
                 float4 color = tex2D(_MainTex, uv); 
                 uv += vel;
-                [unroll(_NumSamples)] 
                 for(int i = 1; i < _NumSamples; i++, uv += vel) 
                 {
                     // Sample the color buffer along the velocity vector.    

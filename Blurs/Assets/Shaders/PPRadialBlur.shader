@@ -49,7 +49,6 @@ Shader "Hidden/PPRadialBlur"
                 float2 vel = (float2(.5f, .5f) - i.uv) / _Strength;
                 float2 uv = i.uv + vel;
 
-                [unroll(_NumSamples)]
                 for(int i = 0; i < _NumSamples; i++, uv += vel){
                     color += tex2D(_MainTex, uv);
                 }
